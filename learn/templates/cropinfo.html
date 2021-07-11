@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('  {{url_for('static',filename='img/info-bg.jpg') }}   ')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>CROP INFORMATION</h1>
+            <span class="subheading">Get to know about the crops.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        
+        <form name="sentMessage" id="contactForm" action="{{ url_for('info')}}" method="post" novalidate autocomplete="on">
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>crop_name</label>
+              <input type="text" class="form-control" placeholder="crop_name" id="crop_name" name='crop_name' required data-validation-required-message="Please enter crop_name value.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          
+          <br>
+          <div id="success"></div>
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+        </form>
+      </div>
+    </div><br>
+  </div>
+
+{% endblock %}

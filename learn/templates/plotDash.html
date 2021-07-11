@@ -1,0 +1,65 @@
+{% extends "adminLayout.html" %}
+{% block body %}
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-bg.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Plot dashboard</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h1>Basic Actions</h1>
+          
+           <a href="/dashboard">  <button class="btn btn-primary"> Dashboard Home</button></a>
+           <a href="/adminlogout">  <button class="btn btn-primary"> Logout</button></a>
+           <hr>
+          
+<h1>Edit Plots</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Sno</th>
+        <th>Owner</th>
+        <th>Topic</th>
+        <th>Date</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+      {% for plot in plots %}
+      <tr>
+        <td>{{plot.sno}}</td>
+        <td>{{plot.owner}}</td>
+        <td>{{plot.topic}}</td>
+        <td>{{plot.date}}</td>
+        <td><a href="/plotDelete/{{plot.sno}}"><button class="btn btn-primary">Delete</button></a></td>
+      </tr>
+      
+
+      {% endfor %}
+
+
+
+
+
+    </tbody>
+  </table>
+
+
+      
+        </div>
+      </div>
+    </div>
+    {% endblock %}

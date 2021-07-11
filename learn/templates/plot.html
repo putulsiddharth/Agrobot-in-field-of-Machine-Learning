@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('  {{url_for('static',filename='img/vacant1.jpg') }}   ')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>VACANT LAND</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+      
+        
+        <form name="sentMessage" id="contactForm" action="/plot" method="post" novalidate>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Topic</label>
+              <input type="text" class="form-control" placeholder="Topic" id="topic" name='topic1' required data-validation-required-message="Please enter your topic.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Owner</label>
+              <input type="text" class="form-control" placeholder="Owner" id="owner" name='owner1' required data-validation-required-message="Please enter your name.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Address</label>
+              <input type="text" class="form-control" placeholder="Address" id="address" name='address1' required data-validation-required-message="Please enter your address.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Description</label>
+              <input type="text" class="form-control" placeholder="Description" id="description" name='description1' required data-validation-required-message="Please enter your Description.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>Mobile</label>
+              <input type="tel" class="form-control" placeholder="Mobile" id="mobile" name='mobile1' required data-validation-required-message="Please enter your mobile number.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <br>
+          <div id="success"></div>
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

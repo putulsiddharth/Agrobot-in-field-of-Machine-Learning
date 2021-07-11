@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('  {{url_for('static',filename='img/misc.jpg') }}   ')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Information</h1>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <h1>Basic Actions</h1>
+          
+           <a href="/info">  <button class="btn btn-primary"> Crop</button></a>
+           <a href="/loan">  <button class="btn btn-primary"> Loan</button></a>
+           <a href="/plot">  <button class="btn btn-primary"> Plot</button></a>
+        <hr>
+        
+        {% for plot in plots %}
+
+        <div class="post-preview">
+          <a href="#">
+            <h2 class="post-title">
+              {{plot.topic}}
+            </h2>
+            </a>
+          
+          <p class="post-meta">Posted by
+            {{plot.owner}}
+            on {{plot.date}}</p>
+        </div>
+        {{plot.description}}
+        <br>
+        {{plot.address}}
+        <br>
+        {{plot.mobile}}
+        <hr>
+        {% endfor %}
+
+        
+      </div>
+    </div><br>
+  </div>
+
+{% endblock %}

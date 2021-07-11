@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('  {{url_for('static',filename='img/pre.jpg') }}   ')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>CROP PREDICTION</h1>
+            <span class="subheading">Have questions? I have answers.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        
+        <form name="sentMessage" id="contactForm" action="{{ url_for('predict')}}" method="post" novalidate autocomplete="on">
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Nitrogen</label>
+              <input type="text" class="form-control" placeholder="Nitrogen" id="name" name='nitrogen' required data-validation-required-message="Please enter nitrogen value.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Phosphorus</label>
+              <input type="text" class="form-control" placeholder="Phosphorus" id="email" name='phosphorus' required data-validation-required-message="Please enter phosphorus value">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>Potassium</label>
+              <input type="text" class="form-control" placeholder="Potassium" id="phone" name='potassium' required data-validation-required-message="Please enter potassium value">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>Temperature</label>
+              <input type="text" class="form-control" placeholder="Temperature" id="phone" name='temperature' required data-validation-required-message="Please enter temperature value">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>Humidity</label>
+              <input type="text" class="form-control" placeholder="Humidity" id="phone" name='humidity' required data-validation-required-message="Please enter humidity value">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>PH</label>
+              <input type="text" class="form-control" placeholder="PH" id="phone" name='pH' required data-validation-required-message="Please enter ph value">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>Rainfall</label>
+              <input type="text" class="form-control" placeholder="Rainfall" id="phone" name='rainfall' required data-validation-required-message="Please enter rainfall value">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <br>
+          <div id="success"></div>
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">PREDICT</button>
+        </form>
+      </div>
+    </div><br>
+    {{ prediction_text }}
+  </div>
+
+{% endblock %}

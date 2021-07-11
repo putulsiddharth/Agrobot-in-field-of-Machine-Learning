@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url(' {{url_for('static',filename='img/about-bg.jpg') }}       ')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>About this Project</h1>
+            <span class="subheading">This is what I do.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>The proposed project could be divided into 3 main parts. At it's centre the project is a crop recommendation system using various characteristics like geographical location, soil chemistry, weather condition etc. Then comes the tips and basic learning material for user who want to grow the crop recommended by the system.</p>
+        <p>Agro Infotainment content like blogs will be made available as an introduction to agriculture and farming of the 21st century. Finally it is intended to club all of these components into a website to provide a seamless UI experience to the user.</p>
+        <p>Tools used: Scikit-Learn,Jupyter Notebook, Visual studio code.Techniques used: Classification, Machine Learning, HTML, CSS, JavaScript, Jquery, JSON, Flask.</p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
