@@ -1,0 +1,17 @@
+{
+"params":
+{
+	"local_server":"True",
+	"local_uri":"mysql://root:putul@localhost:3306/codingthunder",
+	"proud_uri":"mysql://root:putul@localhost:3306/codingthunder",
+	"fb_url":"https://facebook.com/codingthunder",
+	"tw_url":"https://twitter.com/codingthunder",
+	"gt_url":"https://github.com/codingthunder",
+	"blog":"Hello World",
+	"num":"2",
+	"first":"First Program",
+	"location":"C:\\Users\\PUTUL SIDDHARTH\\Desktop\\learn\\static\\",
+	"admin_user":"putul",
+    "admin_password": "subscribenow"
+}
+}
